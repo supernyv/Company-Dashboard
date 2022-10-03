@@ -35,10 +35,7 @@ pages = {
     Input("url", "pathname")
     )
 def display_page(pathname):
-    if pathname in pages:
-        return pages[pathname]
-    else:
-        return "404 Page Error ..."
+    return pages.get(pathname, "404 Page Error ...")
 
 if __name__ == '__main__':
     app.run_server(debug=True)
